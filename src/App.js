@@ -641,3 +641,41 @@ const KafkaSizingCalculator = () => {
                       const tierKey = tier.toLowerCase();
                       const total = environments.reduce((sum, env) => {
                         return sum + (costs[env]?.clusters.reduce((envSum, c) => envSum + c[`monthlyCost${tier}`], 0) || 0);
+                      }, 0) + connectorCosts;
+
+                      return (
+                        <div key={tier} className="bg-white p-4 rounded border">
+                          <div className="text-lg font-semibold text-gray-900">{tier}</div>
+                          <div className="text-2xl font-bold text-blue-600">£{total.toFixed(2)}/mo</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Best Practices */}
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <Info className="w-5 h-5" />
+                    Best Practices & Recommendations
+                  </h3>
+                  <div className="space-y-2 text-sm text-gray-700">
+                    <p>• <strong>Environment Sizing:</strong> Start with lower scaling factors for dev/test environments and adjust based on actual usage patterns.</p>
+                    <p>• <strong>Retention:</strong> Consider your compliance and analytical requirements when setting retention periods. Longer retention increases storage costs.</p>
+                    <p>• <strong>Partitioning:</strong> Plan for future scaling by choosing appropriate partition counts. More partitions enable higher parallelism but increase overhead.</p>
+                    <p>• <strong>Replication:</strong> Use replication factor 3 for production environments to ensure high availability and data durability.</p>
+                    <p>• <strong>Compression:</strong> Enable compression to reduce storage and network costs. Typical compression ratios range from 0.3-0.8 depending on data type.</p>
+                    <p>• <strong>Peak Planning:</strong> Consider seasonal patterns and marketing campaigns when setting peak multipliers.</p>
+                    <p>• <strong>Topic Naming:</strong> Follow the convention domain.subdomain.type.version for better organization and governance.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default KafkaSizingCalculator;
