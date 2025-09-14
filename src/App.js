@@ -201,7 +201,7 @@ const KafkaSizingCalculator = () => {
             <Calculator className="w-8 h-8 text-blue-600" />
             <h1 className="text-3xl font-bold text-gray-900">Confluent Cloud Kafka Sizing Calculator</h1>
           </div>
-          <p className="text-gray-600">Plan your Kafka infrastructure across domains and environments with ECKU-based capacity planning</p>
+          <p className="text-gray-600">Plan your easyJet Confluence Kafka infrastructure across domains and environments with ECKU-based capacity planning</p>
         </div>
 
         {/* Tab Navigation */}
@@ -217,8 +217,8 @@ const KafkaSizingCalculator = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === tab.id
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                     }`}
                 >
                   {tab.name}
