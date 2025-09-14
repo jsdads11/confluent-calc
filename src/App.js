@@ -199,7 +199,7 @@ const KafkaSizingCalculator = () => {
         <div className="bg-white rounded-lg shadow-sm mb-6 p-6">
           <div className="flex items-center gap-3 mb-2">
             <Calculator className="w-8 h-8 text-blue-600" />
-            <h1 className="text-3xl font-bold text-orange-900">EICC Confluent Cloud Kafka Sizing Calculator</h1>
+            <h1 className="text-3xl font-bold text-gray-900">EICC Confluent Cloud Kafka Sizing Calculator</h1>
           </div>
           <p className="text-gray-600">Plan your easyJet Confluence Kafka infrastructure across domains and environments with ECKU-based capacity planning</p>
         </div>
